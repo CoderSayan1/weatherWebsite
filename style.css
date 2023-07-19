@@ -14,6 +14,7 @@ body{
 }
 
 .searchText{
+    font-size: 20px;
     width: 25rem;
     padding: 1rem;
     border-radius: 5rem;
