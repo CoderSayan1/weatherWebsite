@@ -1,0 +1,152 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Ubuntu:ital@1&family=Zeyada&display=swap'); */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Lumanosimo', cursive; */
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: url(images/rainbow.jpg) center center/cover;
+}
+
+.searchText{
+    width: 25rem;
+    padding: 1rem;
+    border-radius: 5rem;
+    color: #122120;
+    background-color: #c2e4fb;
+    border: none;
+    outline: none;
+    box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.4) 0 3px 4px 0;
+    transition: all 200ms;
+}
+.searchText:hover{
+    background-color: #f8bfaf;
+    transform: scale(1.01);
+}
+    
+.searchText:focus{
+    outline: none;
+}
+.btnSearch{
+    border: none;
+    outline: none;
+    background-color: #C2FBD7;
+    border-radius: 50px;
+    border-width: 0;
+    box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 4px 0;
+    color: #008000;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    height: 50px;
+    padding: 0 25px;
+    transition: all 200ms;
+}
+.btnSearch:hover{
+    background-color: #AFE6C3;
+    transform: scale(1.05);
+}
+.header{ 
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+
+.card{
+    border: none;
+    transition: all .6s ease;
+}
+.card:hover{
+    transform: scale(1.02);
+}
+
+#logo{
+    border-radius: 20px;
+    width:30px;
+    height:30px;
+}
+.weather-img{
+    background: url('images/weather2.gif') center center/cover;
+}
+.wind-img{
+    background: url('images/wind1.jpg') center center/cover;
+}
+.humidity-img{
+    background: url('images/humi2.jpg') center center/cover;
+}
+
+.transbox{
+    margin: 30px;
+    background-color: #ffffff;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    opacity: 0.8;
+}
+.temp-text{
+    color:brown;
+    font-weight: bold;
+}
+
+
+
+@media only screen and (max-width: 992px){
+    .trans{
+        margin: 15px;
+    }
+    .transW{
+        margin: 18px;
+    }
+}
+
+@media only screen and (max-width: 765px){
+    .table-responsive{
+        height: 40vh;
+    }
+}
+
+@media only screen and (max-width: 575px){
+    .searchText{
+        width:20rem;
+    }
+    .btnSearch{
+        width: 4rem;
+    }
+}
+
+@media only screen and (max-width: 420px){
+    .searchText{
+        width: 17rem;
+    }
+}
+
+@media only screen and (max-width: 366px){
+    .searchText{
+        width: 12rem;
+    }
+}
+
+@media only screen and (max-width: 284px) {
+    .searchText{
+        width: 8rem;
+        padding: 10px;
+        border-radius: 18px;
+        font-size: 11px;
+    }
+    .btnSearch{
+        font-size: 12px;
+        height: 35px;
+        width: 35px;
+        padding: 0px 10px;
+        border-radius: 16px
+    }
+    .table-responsive{
+        height: 50vh;
+    }
+}
