@@ -23,10 +23,27 @@ const getWeather = (city) =>{
 		humidity.innerHTML = response.humidity
 		wind_speed.innerHTML = response.wind_speed
 
-		var rise = new Date(response.sunrise).toLocaleString(`${city}`,{ hour: 'numeric', minute: 'numeric', hour12: true })
-		sunrise.innerHTML = rise
-		var set = new Date(response.sunset).toLocaleString(`${city}`,{ hour: 'numeric', minute: 'numeric', hour12: true })
-		sunset.innerHTML = set
+
+		function formatAMPM(UNIX_timestamp) {
+
+			var date = new Date(UNIX_timestamp * 1000);
+		
+			var hours = date.getHours();
+			var minutes = date.getMinutes();
+		
+			var ampm = hours >= 12 ? 'pm' : 'am';
+			hours = hours % 12;
+			hours = hours ? hours : 12;
+			minutes = minutes < 10 ? '0' + minutes : minutes;
+			var strTime = hours + ':' + minutes + ' ' + ampm;
+		
+			return strTime;
+		}
+		sunrise.innerHTML = formatAMPM(response.sunrise);
+		sunset.innerHTML = formatAMPM(response.sunset);
+		// console.log(formatAMPM(response.sunrise));
+		// console.log(formatAMPM(response.sunset));
+		
 		
 		
 	})
@@ -39,7 +56,7 @@ submit.addEventListener("click", (e)=>{
 	getWeather(city.value)
 })
 
-getWeather("Delhi")
+// getWeather("Delhi")
 
 fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=kolkata', options)
 	.then(response => response.json())
